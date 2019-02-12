@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700');
+
+//VARIABLES
+$primary-color: #444;
+$secondary-color: #EECE1A;
+$show-home-image: true;
+$home-image: url(../img/background.jpg);
+$background-opacity: 0.7;
+
+//MIXINS
+@mixin easeOut {
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+
+@mixin background {
+	//check if the mixin is being used
+	@if $show-home-image {
+		&#bg-img {
+			//works because mixin is being included in body
+			background: $home-image;
+			background-attachment: fixed; //no image scrolling
+			background-size: cover;
+
+			// by using :after, we can allow the CSS to treat this non-existent element as an existent one. By comparison, we originally used an empty overlay div
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -1; //pushes it behind the texdt
+				background: rgba($primary-color, $background-opacity);
+			}
+		}
+	}
+}

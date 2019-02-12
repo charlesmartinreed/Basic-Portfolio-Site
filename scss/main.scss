@@ -1,17 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700');
-
-//VARIABLES
-$primary-color: #444;
-$secondary-color: #EECE1A;
-$show-home-image: true;
-$home-image: url(../img/background.jpg);
-$background-opacity: 0.9;
-
-//MIXINS
-@mixin easeOut {
-	-webkit-transition: all 0.5s ease-out;
-	transition: all 0.5s ease-out;
-}
+@import 'config';
 
 * {
 	-webkit-box-sizing: border-box;
@@ -19,12 +6,14 @@ $background-opacity: 0.9;
 }
 
 body {
+	@include background();
 	background: $primary-color;
 	color: #fff;
 	height: 100%;
 	margin: 0;
 	font-family: 'Rubik', sans-serif;
 	line-height: 1.5;
+
 }
 
 // HEADINGS
