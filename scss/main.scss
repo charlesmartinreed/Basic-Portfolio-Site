@@ -1,6 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700');
+
+//VARIABLES
 $primary-color: #444;
+$secondary-color: #EECE1A;
+$show-home-image: true;
+$home-image: url(../img/background.jpg);
+$background-opacity: 0.9;
+
+//MIXINS
+@mixin easeOut {
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
 
 body {
 	background: $primary-color;
 	color: #fff;
+	height: 100%;
+	margin: 0;
+	font-family: 'Rubik', sans-serif;
+	line-height: 1.5;
+}
+
+// HEADINGS
+h1, h2, h3 {
+	margin: 0;
+	font-weight: 400;
+
+	//this is the same as saying h1.lg-heading
+	&.lg-heading {
+		// still set to default html font-size of 16px
+		font-size: 6rem;
+	}
+
+	&.sm-heading {
+		margin-bottom: 2rem;
+		padding: 0.2rem 1rem;
+		background: rgba(lighten($primary-color, 2), 0.5);
+
+	}
+}
+
+a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+
+header {
+	position: fixed;
+	z-index: 2;
+	width: 100%;
+}
+
+.text-secondary {
+	color: $secondary-color;
+}
+
+main {
+	padding: 4rem;
+	height: 100%;
+
+	.icons {
+		margin-top: 1rem;
+
+		a {
+			padding: 0.4rem;
+
+			&:hover {
+				color: $secondary-color;
+				@include easeOut(); //using our mixin
+			}
+		}
+	}
+
+	&#home {
+		overflow: hidden;
+		h1 {
+			margin-top: 20vh; //the device viewport is split into 100 slices, so we're using 20 of them right now with our h1's height
+		}
+	}
 }
