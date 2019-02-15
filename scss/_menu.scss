@@ -15,4 +15,28 @@
 		background: #FFF;
 		@include easeOut;
 	}
+
+	//Rotate into X with Menu Lines
+	&.close { //when menu button has close class
+		transform: rotate(180deg);
+
+		.btn-line {
+			//Line 1 Rotate
+			&:nth-child(1) {
+				-webkit-transform: rotate(45deg) translate(5px, 5px);
+				        transform: rotate(45deg) translate(5px, 5px);
+			}
+
+			//Line 2 Hide
+			&:nth-child(2) {
+				opacity: 0;
+			}
+
+			//Line 3 Rotate
+			&:nth-child(3) {
+				-webkit-transform: rotate(-45deg) translate(7px, -6px);
+				        transform: rotate(-45deg) translate(7px, -6px);
+			}
+		}
+	}
 }
