@@ -40,3 +40,54 @@
 		}
 	}
 }
+
+// Menu Overlay
+.menu {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	opacity: 0.9;
+	visibility: hidden;
+
+	&.show {
+		visibility: visible;
+	}
+
+	//represents menu-branding
+	// common styling
+	&-branding,
+	 &-nav {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-flow: column wrap;
+		        flex-flow: column wrap;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		float: left;
+		width: 50%;
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	&-nav {
+		margin: 0;
+		padding: 0;
+		background: darken($primary-color, 5); //5%
+		list-style: none;
+		-webkit-transform: translate3d(0, -100%, 0);
+		        transform: translate3d(0, -100%, 0); //off page
+		@include easeOut;
+
+		&.show {
+			//slide in the nav from top using translate3d
+			transform: translate3d(0, 0, 0);
+		}
+	}
+}
