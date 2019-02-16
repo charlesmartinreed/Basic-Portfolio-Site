@@ -84,6 +84,21 @@
     .menu .nav-item.show {
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0); }
+    .menu .nav-item.current > a {
+      color: #EECE1A; }
+  .menu .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+    color: #FFF;
+    text-decoration: none;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out; }
+    .menu .nav-link:hover {
+      color: #EECE1A; }
 
 .nav-item:nth-child(1) {
   -webkit-transition-delay: 0.1s;
