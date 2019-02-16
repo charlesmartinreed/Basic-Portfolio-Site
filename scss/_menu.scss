@@ -76,6 +76,7 @@
 		overflow: hidden;
 	}
 
+	//nav side only
 	&-nav {
 		margin: 0;
 		padding: 0;
@@ -88,6 +89,28 @@
 		&.show {
 			//slide in the nav from top using translate3d
 			transform: translate3d(0, 0, 0);
+		}
+	}
+
+	//branding side only
+	&-branding {
+		background: $primary-color; //NOTE: This is still visible because opacity is set on the .menu class;
+		-webkit-transform: translate3d(0, 100%, 0);
+		        transform: translate3d(0, 100%, 0);
+		@include easeOut;
+
+		//slide in the nav from bottom using translate3d
+		&.show {
+			-webkit-transform: translate3d(0, 0, 0);
+			        transform: translate3d(0, 0, 0);
+		}
+
+		.portrait {
+			width: 250px;
+			height: 250px;
+			background: url('../img/portrait.jpg');
+			border-radius: 50%;
+			border: solid 3px $secondary-color;
 		}
 	}
 }
