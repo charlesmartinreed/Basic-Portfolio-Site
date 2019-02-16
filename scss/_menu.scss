@@ -113,4 +113,23 @@
 			border: solid 3px $secondary-color;
 		}
 	}
+
+	.nav-item {
+		//links are off-screen until show class is added, animate in from the right
+		transform: translate3d(600px, 0, 0);
+		@include easeOut;
+
+		&.show {
+			-webkit-transform: translate3d(0, 0, 0);
+			        transform: translate3d(0, 0, 0);
+		}
+	}
+}
+
+// Delay for each nav item's slide in effect by 0.1s
+@for $i from 1 through 4 {
+	.nav-item:nth-child(#{$i}) {
+		-webkit-transition-delay: $i * 0.1s;
+		        transition-delay: $i * 0.1s;
+	}
 }
