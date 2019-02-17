@@ -1,6 +1,5 @@
 @import 'config';
 @import 'menu';
-@import 'mobile';
 
 * {
 	-webkit-box-sizing: border-box;
@@ -51,6 +50,10 @@ header {
 
 .text-secondary {
 	color: $secondary-color;
+}
+
+.text-darkened {
+	color: darken($primary-color, 20%);
 }
 
 main {
@@ -124,3 +127,5 @@ main {
 	background: darken($primary-color, 10);
 	color: set-text-color($primary-color);
 }
+
+@import 'mobile';
