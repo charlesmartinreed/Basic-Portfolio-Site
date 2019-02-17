@@ -37,6 +37,15 @@ $background-opacity: 0.7;
 	}
 }
 
+//FUNCTION FOR SWAPPING LIGHT/DARK COLORS DYNAMICALLY
+@function set-text-color($color) {
+	@if(lightness($color) > 40) {
+		@return #000;
+	} @else {
+		@return #FFF;
+	}
+}
+
 // Media Query Mixins
 @mixin mediaSM {
 	@media screen and (max-width: 500px) {
