@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Responsive portfolio website demo",
   "main": "index.js",
+	"homepage": "https://charlesmartinreed.github.io/Basic-Portfolio-Site",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+		"deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,7 @@
   },
   "homepage": "https://github.com/charlesmartinreed/Basic-Portfolio-Site#readme",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0"
   }
 }
